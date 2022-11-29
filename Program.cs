@@ -4,6 +4,26 @@ namespace MyFirstProgram
 {
     class Program
     {
+        static int szgeppont;
+        static int jatekospont = 0;
+
+        static void Win()
+        {
+            jatekospont++;
+            Console.WriteLine("Nyertel!\nPontjaid: " + jatekospont);
+        }
+
+        static void Lose()
+        {
+            szgeppont++;
+            Console.WriteLine("Vesztettel!\nGep pontjai: " + szgeppont);
+        }
+
+        static void Draw()
+        {
+            Console.WriteLine("Dontetlen!\nNincs valtozas a pontokban");
+        }
+
         static void Main(string[] args)
         {
             Random random = new Random();
@@ -12,20 +32,16 @@ namespace MyFirstProgram
             String szgep;
             String valasz;
             String eredmeny;
-            int szgeppont;
-            int jatekospont;
 
             while (playAgain)
             {
                 jatekos = "";
                 szgep = "";
                 valasz = "";
-                szgeppont = 0;
-                jatekospont = 0;
 
                 while (jatekos != "KO" && jatekos != "PAPIR" && jatekos != "OLLO" && jatekos != "SPOCK" && jatekos != "GYIK")
                 {
-                    Console.Write("ko/papir/ollo/spock/gyik: ");
+                    Console.WriteLine("ko/papir/ollo/spock/gyik: ");
                     jatekos = Console.ReadLine();
                     jatekos = jatekos.ToUpper();
                 }
@@ -58,143 +74,139 @@ namespace MyFirstProgram
                     case "KO":
                         if (szgep == "KO")
                         {
-                            Console.WriteLine("Dontetlen!");
+                            Draw();
                         }
                         else if (szgep == "PAPIR")
                         {
-                            Console.WriteLine("Vesztettel!");
+                            Lose();
                         }
                         else if (szgep == "SPOCK")
                         {
-                            Console.WriteLine("Vesztettel!");
+                            Lose();
                         }
                         else if (szgep == "GYIK")
                         {
-                            Console.WriteLine("Nyertel!");
+                            Win();
                         }
                         else
                         {
-                            Console.WriteLine("You win!");
+                            Win();
                         }
                         break;
                     case "PAPIR":
                         if (szgep == "KO")
                         {
-                            Console.WriteLine("Nyertel!");
+                            Win();
                         }
                         else if (szgep == "PAPIR")
                         {
-                            Console.WriteLine("Dontetlen!");
+                            Draw();
                         }
                         else if (szgep == "SPOCK")
                         {
-                            Console.WriteLine("Nyertel!");
+                            Win();
                         }
                         else if (szgep == "GYIK")
                         {
-                            Console.WriteLine("Vesztettel!");
+                            Lose();
                         }
                         else
                         {
-                            Console.WriteLine("Vesztettel!");
+                            Lose();
                         }
                         break;
                     case "OLLO":
                         if (szgep == "KO")
                         {
-                            Console.WriteLine("Vesztettel!");
+                            Lose();
                         }
                         else if (szgep == "PAPIR")
                         {
-                            Console.WriteLine("Nyertel!");
+                            Win();
                         }
                         else if (szgep == "SPOCK")
                         {
-                            Console.WriteLine("Nyertel!");
+                            Win();
                         }
                         else if (szgep == "GYIK")
                         {
-                            Console.WriteLine("Vesztettel!");
+                            Lose();
                         }
                         else
                         {
-                            Console.WriteLine("Dontetlen!");
+                            Draw();
                         }
                         break;
                     case "SPOCK":
                         if (szgep == "KO")
                         {
-                            Console.WriteLine("Nyertel!");
+                            Win();
                         }
                         else if (szgep == "PAPIR")
                         {
-                            Console.WriteLine("Vesztettel!");
+                            Lose();
                         }
                         else if (szgep == "OLLO")
                         {
-                            Console.WriteLine("Nyertel!");
+                            Win();
                         }
                         else if (szgep == "SPOCK")
                         {
-                            Console.WriteLine("Dontetlen!");
+                            Draw();
                         }
                         else if (szgep == "GYIK")
                         {
-                            Console.WriteLine("Vesztettel!");
+                            Lose();
                         }
                         else
                         {
-                            Console.WriteLine("Dontetlen!");
+                            Draw();
                         }
                         break;
                     case "GYIK":
                         if (szgep == "KO")
                         {
-                            Console.WriteLine("Vesztettel!");
+                            Lose();
                         }
                         else if (szgep == "PAPIR")
                         {
-                            Console.WriteLine("Nyertel!");
+                            Win();
                         }
                         else if (szgep == "OLLO")
                         {
-                            Console.WriteLine("Vesztettel!");
+                            Lose();
                         }
                         else if (szgep == "SPOCK")
                         {
-                            Console.WriteLine("Nyertel!");
+                            Win();
                         }
                         else if (szgep == "GYIK")
                         {
-                            Console.WriteLine("Dontetlen");
+                            Draw();
                         }
                         else
                         {
-                            Console.WriteLine("Dontetlen!");
+                            Draw();
                         }
                         break;
                 }
 
-                eredmeny = Console.ReadLine();
-                if (eredmeny == "Nyertel!") 
+                if (Math.Abs(szgeppont - jatekospont) == 3)
                 {
-                    jatekospont = +1;
+                    if (szgeppont > jatekospont)
+                    {
+                        Console.WriteLine("Gep nyert!");
+                        Console.ReadKey();
+                    }
+                    else
+                    {
+                        Console.WriteLine("Nyerted a merkozest!");
+                        Console.ReadKey();
+                    }
                 }
-                else if (eredmeny == "Vesztettel") 
-                {
-                    szgeppont = +1;
-                }
-                else
-                {
-                    Console.WriteLine("Nincs valtozas a pontokban");
-                }
-                break;
 
-                Console.WriteLine("Pontjaid: ", jatekospont);
-
-                Console.Write("Ujrakezded? (I/N): ");
-                valasz = Console.ReadLine();
-                valasz = valasz.ToUpper();
+                Console.WriteLine("Kovetkezo fordulo mehet? (I/N): ");
+                valasz = Console.ReadLine().ToUpper();
 
                 if (valasz == "I")
                 {
@@ -203,12 +215,9 @@ namespace MyFirstProgram
                 else
                 {
                     playAgain = false;
+                    Console.WriteLine("Szia");
+                    Console.ReadKey();
                 }
-
-
-                Console.WriteLine("Szia");
-
-                Console.ReadKey();
             }
         }
     }
