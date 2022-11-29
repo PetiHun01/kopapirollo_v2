@@ -1,0 +1,15 @@
+C:\Users\Peti\source\repos\kopapirollo\bin\Debug\net6.0\kopapirollo.exe
+C:\Users\Peti\source\repos\kopapirollo\bin\Debug\net6.0\kopapirollo.deps.json
+C:\Users\Peti\source\repos\kopapirollo\bin\Debug\net6.0\kopapirollo.runtimeconfig.json
+C:\Users\Peti\source\repos\kopapirollo\bin\Debug\net6.0\kopapirollo.dll
+C:\Users\Peti\source\repos\kopapirollo\bin\Debug\net6.0\kopapirollo.pdb
+C:\Users\Peti\source\repos\kopapirollo\obj\Debug\net6.0\kopapirollo.csproj.AssemblyReference.cache
+C:\Users\Peti\source\repos\kopapirollo\obj\Debug\net6.0\kopapirollo.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Peti\source\repos\kopapirollo\obj\Debug\net6.0\kopapirollo.AssemblyInfoInputs.cache
+C:\Users\Peti\source\repos\kopapirollo\obj\Debug\net6.0\kopapirollo.AssemblyInfo.cs
+C:\Users\Peti\source\repos\kopapirollo\obj\Debug\net6.0\kopapirollo.csproj.CoreCompileInputs.cache
+C:\Users\Peti\source\repos\kopapirollo\obj\Debug\net6.0\kopapirollo.dll
+C:\Users\Peti\source\repos\kopapirollo\obj\Debug\net6.0\refint\kopapirollo.dll
+C:\Users\Peti\source\repos\kopapirollo\obj\Debug\net6.0\kopapirollo.pdb
+C:\Users\Peti\source\repos\kopapirollo\obj\Debug\net6.0\kopapirollo.genruntimeconfig.cache
+C:\Users\Peti\source\repos\kopapirollo\obj\Debug\net6.0\ref\kopapirollo.dll
